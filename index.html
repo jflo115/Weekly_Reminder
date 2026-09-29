@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f5f2eb" />
+  <title>Next Class — Weekly Reminder</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#today" aria-label="Next Class home">
+        <span class="brand-mark">↗</span>
+        <span>next class</span>
+      </a>
+      <div class="today-chip"><span class="status-dot"></span><span id="todayLabel"></span></div>
+    </header>
+
+    <section class="hero" id="today">
+      <div class="hero-copy">
+        <p class="eyebrow">Your weekly reset</p>
+        <h1>Pick up<br /><em>where you left off.</em></h1>
+        <p class="hero-text">A quiet place to leave yourself a trail back to the last class.</p>
+      </div>
+      <div class="hero-badge" aria-hidden="true">
+        <span>7</span>
+        <small>days<br />back</small>
+      </div>
+    </section>
+
+    <div class="content-grid">
+      <section class="panel last-week-panel">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Look back</p>
+            <h2>Last week</h2>
+          </div>
+          <span class="date-pill" id="lastWeekLabel"></span>
+        </div>
+        <div id="lastWeekNotes" class="notes-list"></div>
+      </section>
+
+      <section class="panel add-panel" id="write">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Look ahead</p>
+            <h2>Leave a note</h2>
+          </div>
+          <span class="pencil-icon">✎</span>
+        </div>
+        <form id="noteForm">
+          <label for="course">Course or group <span>optional</span></label>
+          <input id="course" name="course" type="text" placeholder="e.g. Intro to drawing" maxlength="60" />
+
+          <label for="classDate">Bring this up on</label>
+          <div class="date-input-wrap">
+            <input id="classDate" name="classDate" type="date" required />
+            <span class="calendar-icon">▣</span>
+          </div>
+
+          <label for="note">Your reminder</label>
+          <textarea id="note" name="note" rows="5" required placeholder="What should future-you remember?"></textarea>
+          <button class="primary-button" type="submit"><span>Save reminder</span><span>→</span></button>
+          <p class="save-confirmation" id="saveConfirmation" role="status"></p>
+        </form>
+      </section>
+    </div>
+
+    <section class="upcoming-section" id="upcoming">
+      <div class="section-heading upcoming-heading">
+        <div>
+          <p class="eyebrow">Your runway</p>
+          <h2>Upcoming reminders</h2>
+        </div>
+        <span class="upcoming-count" id="upcomingCount"></span>
+      </div>
+      <div id="upcomingNotes" class="upcoming-list"></div>
+    </section>
+
+    <footer><span>Private by default</span><span>Saved in this browser</span></footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
